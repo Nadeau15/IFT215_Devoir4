@@ -37,5 +37,70 @@
             "nom": "Prunier",
             "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
         }
+    },
+    {
+        "id": 3,
+        "serial": "yoytr",
+        "nom": "kiwi",
+        "description": "pas un jouet",
+        "prix": 2.23,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 4,
+        "serial": "vmnmvm",
+        "nom": "cerise",
+        "description": "pas un jouet",
+        "prix": 2.23,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 5,
+        "serial": "hkjhkh",
+        "nom": "chou",
+        "description": "pas un jouet",
+        "prix": 2.23,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 6,
+        "serial": "sfsf",
+        "nom": "salade",
+        "description": "pas un jouet",
+        "prix": 2.23,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
+    },
+    {
+        "id": 7,
+        "serial": "qwrt",
+        "nom": "piment",
+        "description": "pas un jouet",
+        "prix": 2.23,
+        "qte_inventaire": 50,
+        "categorie": {
+            "id": 1,
+            "nom": "Prunier",
+            "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments"
+        }
     }
 ]
