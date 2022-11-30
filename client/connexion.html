@@ -2,18 +2,18 @@
 <br> <br/>
 <form class="connectionForm" method="post" action="confirmation.html" >
     <fieldset id="#renseignement-connexion">
-        <div class="group2 formInput">
+        <div class="connection formInput">
             <label for="courriel">Adresse courriel</label>
             <!--Doit avoir un format xyz@xyz.xy-->
             <input type="email" name="courriel" id="courriel" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"/> 
         </div>
        
-        <div class="group2 formInput">
+        <div class="connection formInput">
             <label for="mot-de-passe">Mot de passe</label>
             <!--Doit contenir au moins un chiffre, une majuscule et une minuscule. Doit avoir au moins 8 caractères-->
             <input type="password" name="mot-de-passe" id="mot-de-passe" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
         </div>
-        <div class="group submit-group2">
+        <div class="submit-connection">
             <input type="submit" value="Connecter">
             
         </div>

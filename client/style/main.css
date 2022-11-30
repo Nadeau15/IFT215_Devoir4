@@ -238,19 +238,20 @@ form .group select{
 .formInput {
     text-align: center;
 }
-.submit-group2 {
+.submit-connection {
     max-width: 500px;
     text-align: center;
     padding: 14px 0px 14px 0px;
 }
-form .group2 label{
+form .connection label{
     display: inline-block;
     width: 45%;
-    padding-top: 10px; 
+    padding-top: 5%; 
 }
 
 .connectionForm fieldset{
-    border:  1px solid black;
-    padding: 5px;
-    margin-bottom:70px;
+    border:  2px solid black;
+    border-radius: 20px;
+    padding: 1%;
+    margin-bottom:7%;
 }
