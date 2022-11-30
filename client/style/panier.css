@@ -1,0 +1,15 @@
+.headerItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productImg {
+    display: flex;
+    justify-content: center;
+}
+
+.infoButton {
+    border: 0;
+    background-color: transparent;
+}

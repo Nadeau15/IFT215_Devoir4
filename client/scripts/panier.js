@@ -4,9 +4,9 @@ function panier_to_html(item){
     items_panier = $('<div></div>')
             .addClass('row')
             .append('<p class="col">' + item.nomProduit + '</p>')
-            .append('<p class="col">' + item.prix + '</p>')
+            .append('<p class="col">' + item.prix.toFixed(2) + '</p>')
             .append('<p class="col">' + item.quantite + '</p>')
-            .append('<p class="col">' + item.prix * item.quantite + '</p>')
+            .append('<p class="col">' + (item.prix * item.quantite).toFixed(2) + '</p>')
             .append('<hr/>');
     return items_panier;
 }
@@ -25,7 +25,7 @@ function chargerpanier() {
                 $('#list_panier').append(panier);
             });
             $('#totalFacture').append(
-                '<h6>Total: '+ result.valeur + '</h6>');
+                '<h6>Total: '+ result.valeur.toFixed(2) + '</h6>');
         }
     });
 }
