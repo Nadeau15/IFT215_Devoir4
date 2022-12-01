@@ -5,7 +5,7 @@ function panier_to_html(item){
             .addClass('row')
             .append('<p class="col">' + item.nomProduit + '</p>')
             .append('<p class="col">' + item.prix.toFixed(2) + '</p>')
-            .append('<p class="col">' + item.quantite + '</p>')
+            .append('<p id="id'+item.id+'" class="col">' + item.quantite + '</p>')
             .append('<p class="col">' + (item.prix * item.quantite).toFixed(2) + '</p>')
             .append('<hr/>');
     return items_panier;

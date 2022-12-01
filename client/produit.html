@@ -3,10 +3,10 @@
 </head>
 <section class="mt-2 container">
   <div class="row">
-    <div class="offset-md-10 col-md-2">
+    <div class="offset-md-9 col-md-3">
       <div class="input-group mb-3">
-        <input type="search" class="form-control" placeholder="search">
-        <span class="input-group-text"><i class="bi-search"></i></span>
+        <input type="search" id="search" class="form-control" placeholder="search" onkeypress="submit(event)">
+        <button id="searchSubmit" class="input-group-text" onclick="submitted()"><i class="bi-search"></i></button>
         <a href="#/panier" class="">
           <button type="button" class="btn btn-primary position-relative">
             <i class="bi bi-cart-plus"></i>
@@ -15,10 +15,34 @@
             </span>
           </button>
         </a>
+        <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#description">
+          <i class="fa-solid fa-circle-question fa-2xl"></i>
+        </button>
       </div>
     </div>
   </div>
+  <!-- Affichage du produit recherché-->
+  <div id="searched_items"></div>
   <!-- Affichage de la liste de produits-->
   <div class="row" id="list_items"></div>
 </section>
-
+<div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Cette page contient les produits en vente. Vous pouvez cliquer sur l'article qui vous intéresse 
+          pour voir plus de détails et l'ajouter à votre panier. Vous pouvez aussi faire l'ajout au panier 
+          sans voir les détails du produits.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
