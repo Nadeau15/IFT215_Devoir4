@@ -88,7 +88,7 @@ function searchItem_to_html(item){
       '</button>'+
       '</div>'+
       '<div class="modal-footer">'+
-        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeAlert('+item.id+')>Fermer</button>'+
+        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeAlert('+item.id+')">Fermer</button>'+
         '<button id="'+item.id+'" type="button" class="btn btn-primary" onclick="add_item('+item.id +','+item.qte_inventaire+')">Ajouter au panier</button>'+
       '</div>'+
     '</div>'+
