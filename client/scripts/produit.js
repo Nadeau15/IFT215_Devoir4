@@ -4,7 +4,7 @@ function item_to_html(item){
     item_head = $('<div></div>')
         .addClass('card-header py-3 headerItem')
         .append('<h4 class="my-0 fw-normal">' + item.nom + '</h4>')
-        .append('<button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#'+item.nom+'" onclick="editPopup('+item.id+', '+item.qte_inventaire+')">' + 
+        .append('<button type="button" id="info'+item.id+'" class="infoButton" data-bs-toggle="modal" data-bs-target="#'+item.nom+'" onclick="editPopup('+item.id+', '+item.qte_inventaire+')">' + 
         '<i class="fa-solid fa-circle-info fa-xl"></i>'+
         '</button>' + 
         '<div class="modal fade" id="'+item.nom+'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">'+
