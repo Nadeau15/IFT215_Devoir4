@@ -9,11 +9,10 @@ function transaction_to_html(panier){
 }
 
 function chargertransaction() {
-    let TOKEN_PANIER = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k";
     $.ajax({
-        url: "/clients/1/panier",
+        url: "/clients/"+ID_CLIENT+"/panier",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_PANIER);
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN);
         },
         success: function( result ) {
             $.each(result.items, function (key, value) {
@@ -30,7 +29,6 @@ function chargertransaction() {
 }
 
 function envoyerCommande(){
-    let TOKEN_PANIER = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTY2OTk5MjQ5MywiZXhwIjoxNjY5OTk5NjkzfQ.w-12aWe0WrxXVo_z070X0pYcyAc5tVhOQpW2gD5jiiA";
     $.ajax({
         url: "/ventes",
         method: "POST",
@@ -38,7 +36,7 @@ function envoyerCommande(){
             "idClient": 1
         }),
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_PANIER);
+            xhr.setRequestHeader('Authorization', "Basic " + TOKEN);
         },
         success: function( result ) {
             console.log(allllllooooo);

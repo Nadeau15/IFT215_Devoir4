@@ -121,11 +121,6 @@ function editPopup(id, qte){
         document.getElementById("itemQte"+id).innerHTML = "Stock épuisé";
         document.getElementById("qte"+id).innerHTML = "";
      }
-    //else{
-    //     document.getElementById(id).disabled = false;
-    //     document.getElementById("itemQte"+id).style.color = "";
-    //     document.getElementById("itemQte"+id).innerHTML = "Quantité disponible: "+qte;
-    // }
 }
 
 function closeAlert(id){
@@ -135,17 +130,13 @@ function closeAlert(id){
 }
 
 function chargerproduit(){
-    let ID_CLIENT = 1;
-    let TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k";
 
     $('<div></div>').addClass('container mb-4 text-center');
     $.ajax({
         url: "/produits",
         success: function( result ) {
-            console.log(result);
             $.each(result, function (key, value) {
                 item = item_to_html(value);
-                console.log(value);
                 $('#list_items').append(item);
 
                 if(value.qte_inventaire == 0){
@@ -162,7 +153,7 @@ function chargerproduit(){
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN);
         },
         success: function( result ) {
             $('#item_counter').text(result.items.length);
@@ -209,18 +200,17 @@ function submitted() {
   }
 
 function add_item(id, qte){
-    let ID_CLIENT = 1;
-    let TOKEN_CLIENT = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k";
+    console.log(TOKEN);
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"POST",
         data: {"idProduit": id, "quantite": 1},
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_CLIENT);
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN);
         },
         success: function( result ) {
             $('#item_counter').text(result.items.length);
-            if(qte-1 == 0){
+            if(qte == 0){
                 document.getElementById("itemQteCard"+id).innerHTML = "Stock épuisé";
                 document.getElementById("itemQteCard"+id).style.color = "orangered";
                 document.getElementById("itemQteCard"+id).style.textAlign = "center";

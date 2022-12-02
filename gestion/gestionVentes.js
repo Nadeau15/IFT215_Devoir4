@@ -46,6 +46,7 @@ class GestionVentes {
   ajouterVente(req, res) {
     const idClient = req.body.idClient;
     const client = this.collectionClient.recupereClient(idClient);
+    TOKEN = client.token;
     if (client) {
       if (client.panier.valeur > 0) {
         const vente = new Vente(-1, idClient, client.panier.valeur, client.panier.items, this.statusPossibles.recue, new Date());
