@@ -1,4 +1,30 @@
-<section class="mt-2 container">
+<div>
+    <button type="button" class="infoButton" style="float:right" data-bs-toggle="modal" data-bs-target="#description">
+        <i class="fa-solid fa-circle-question fa-2xl"></i>
+      </button>
+    <input type="button" onClick="window.location.href ='#/produit'" style="float:right" class="button" value="Retourner au magasin"></button>      
+</div>
+<div class="row"><p>Panier</p></div>
+<div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Panier</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Cette page contient le panier des produits sélectionnés. Vous pouvez modifier la quantité des produits dans le panier ou bien les enlever définitivement en appuyant sur le X.
+            Si vous voulez retourner à la page des produits, il suffit de cliquer sur le bouton "Retourner au magasin". Enfin, vous pouvez soumettre la commande en appuyant sur le bouton "Passer la commande".                      </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<section class="mt-2 container" id="graph">            
     <div class="row">
         <div class="col">
             <h6>Nom</h6>
@@ -6,6 +32,10 @@
         <div class="col">
             <h6>Prix</h6>
         </div>
+        <!--<div class="col">
+            <h6>Disponibilite</h6>
+        </div>
+        -->
         <div class="col">
             <h6>Qte</h6>
         </div>
@@ -14,8 +44,13 @@
         </div>
         <hr/>
     </div>
-    <!-- Affichage de la liste de produits-->
-    <div id="list_panier"></div>
-
-    <div id="totalFacture" style="padding-top: 20px; text-align: right;"></div>
 </section>
+    <!-- Affichage de la liste de produits-->    
+    <div id="list_panier"></div>        
+    <div id="totalFacture" style="padding-top: 20px; text-align: right;"></div>
+    <input type="button" onClick="window.location.href ='#/transaction'" class="button" value="Passer la commande" style="float: right;" font-size="16px"></button>        
+      <!--border: 0;
+    background-color: transparent;
+    color: #0d6efd;
+      -->
+    
