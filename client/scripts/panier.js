@@ -2,13 +2,13 @@ function panier_to_html(item){
     items_panier = $('<div></div>')            
             .addClass('row')
             .append('<p class="col">' + item.nomProduit + '</p>')
-            .append('<p class="col" id="prix' + item.id +'">' + item.prix + "$" + '</p>')
+            .append('<p class="col" id="prix' + item.id +'">' + item.prix + '</p>')
             .addClass('row')
             .append('<p class="col">'  + '</p>')                        
-            .append('<p class="col">' + '<input type="button" id="'+ item.id +'" onclick="ajouterItem('+ item.id +')" min="0" width= "10px;" value="+"' + item.quantite + '"/>' + '</p>')
+            .append('<p class="col">' + '<input type="button" id="'+ item.id +'" onclick="enleverItem('+ item.id +')" min="0" width= "10px;" value="-"' + item.quantite + '"/>' + '</p>')
             .append('<p class="col" id="qte'+ item.id +'">' + item.quantite + '</p>')
-            .append('<p class="col">' + '<input type="button" id="'+ item.id +'" onclick="enleverItem('+ item.id +')" min="0" width= "10px;" value="-"/>' + '</p>')
-            .append('<p class="col" id="total'+ item.id +'">' + (item.prix * item.quantite).toFixed(2) + "$" +'</p>')            
+            .append('<p class="col">' + '<input type="button" id="'+ item.id +'" onclick="ajouterItem('+ item.id +')" min="0" width= "10px;" value="+"/>' + '</p>')
+            .append('<p class="col" id="total'+ item.id +'">' + (item.prix * item.quantite).toFixed(2) +'</p>')            
             .append('<p class="col" id="bouton">'+ '<button type="button" id="retirer'+item.id+' "class="infoButton" onclick="retirerPanier('+item.id+')"><i class="fa-solid fa-xmark Close" aria-hidden=true"></i>'+'</button>')
             .append('<hr/>');            
     return items_panier;}
@@ -56,7 +56,11 @@ function enleverItem(id) {
         
         // Ne fonctionne pas pour le input qte...
         var prix = document.getElementById("prix" + id).innerHTML;    
-        var element = document.getElementById("total" + id).innerHTML = (quantite * prix).toFixed(2);    
+        var element = document.getElementById("total" + id).innerHTML = (quantite * prix).toFixed(2);   
+        var grandTotal = document.getElementById("grandTotal").innerHTML;
+        grandTotal = grandTotal - prix;
+
+        document.getElementById("grandTotal").innerHTML = grandTotal.toFixed(2);        
         
         $.ajax({
             url: "/clients/1/panier/"+id,
@@ -67,7 +71,7 @@ function enleverItem(id) {
             },
             success: function( result ) {
                 console.log(result);            
-                location.reload();                 
+                //location.reload();                 
             }
     })};            
 }
@@ -77,29 +81,28 @@ function ajouterItem(id) {
     
     var quantite = document.getElementById("qte" + id).innerHTML;
 
-    /*if (quantite < 1) {
-        quantite = 0;
-        document.getElementById("qte" + id).innerHTML = quantite;
-    }*/
-    //else {
-        quantite = quantite + 1;
-        document.getElementById("qte" + id).innerHTML = quantite;    
+    quantite = parseInt(quantite) + 1;    
+    document.getElementById("qte" + id).innerHTML = quantite;        
         
-        // Ne fonctionne pas pour le input qte...
-        var prix = document.getElementById("prix" + id).innerHTML;    
-        var element = document.getElementById("total" + id).innerHTML = (quantite * prix).toFixed(2);    
+    // Ne fonctionne pas pour le input qte...
+    var prix = document.getElementById("prix" + id).innerHTML;    
+    var element = document.getElementById("total" + id).innerHTML = (parseInt(quantite) * prix).toFixed(2);   
+    var grandTotal = document.getElementById("grandTotal").innerHTML;
+    grandTotal = parseFloat(grandTotal) + parseFloat(prix);
+
+    document.getElementById("grandTotal").innerHTML = grandTotal.toFixed(2);
         
-        $.ajax({
-            url: "/clients/1/panier/"+id,
-            method: "PUT",
-            data:{'quantite':1},
-            beforeSend: function (xhr){
-                xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_PANIER);
-            },
-            success: function( result ) {
-                console.log(result);            
-                location.reload();                 
-            }
+    $.ajax({
+        url: "/clients/1/panier/"+id,
+        method: "PUT",
+        data:{'quantite':1},
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_PANIER);
+        },
+        success: function( result ) {
+            console.log(result);            
+            //location.reload();                 
+        }
     });
 }
 
@@ -118,7 +121,7 @@ function chargerpanier() {
                 $('#list_panier').append(panier);
             });
             $('#totalFacture').append(
-                '<h6>Total: '+ (result.valeur).toFixed(2) + '</h6>');
+                '<h6>Total: <div id="grandTotal">'+ (result.valeur).toFixed(2) + '</div></h6>');
         }
     });
 }
