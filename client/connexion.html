@@ -24,10 +24,10 @@
                         </div>
                             <div class="modal-body">
                                 <p>
-                                    Le mot de passe devrait contenir: <br><br/>
-                                    - 1 chiffre <br><br/>
-                                    - 1 MAJUSCULE <br><br/>
-                                    - 1 minuscule <br><br/>
+                                    Le mot de passe devrait contenir: <br/>
+                                    - 1 chiffre <br/>
+                                    - 1 MAJUSCULE <br/>
+                                    - 1 minuscule <br/>
                                     - Minimum 8 caractères
                                 </p>
                             </div>
@@ -38,9 +38,17 @@
                 </div>
             </div>
         </div>
-               
         <div class="submit-connection">
-            <button class="btn btn-primary" type="submit">Connexion</button>
+            <input type="button" class="btn btn-primary" value="Connexion" onclick="versCommande()"/>
+            <div id="error" class="alert alert-danger" role="alert" style='display:none'>
+                Courriel ou mot de passe invalide!
+                Veuillez réessayer!
+            </div>
         </div>
+        <!-- <a href="#/confirmation">
+            <div class="n">
+                <button class="btn btn-primary" type="submit">Connexion</button>
+            </div>
+        </a> -->
     </fieldset>
 </form>
