@@ -9,7 +9,7 @@
         "courriel": "aaa@bbb.com",
         "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
         "panier": {
-            "valeur": 1411.0900000000004,
+            "valeur": 157.25,
             "items": [
                 {
                     "id": 0,
@@ -17,7 +17,7 @@
                     "nomProduit": "Banane",
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
-                    "quantite": 55
+                    "quantite": 1
                 },
                 {
                     "id": 1,
@@ -25,7 +25,23 @@
                     "nomProduit": "Tomate",
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
-                    "quantite": 1
+                    "quantite": 4
+                },
+                {
+                    "id": 2,
+                    "idProduit": 2,
+                    "nomProduit": "concombre",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 2.23,
+                    "quantite": 2
+                },
+                {
+                    "id": 3,
+                    "idProduit": 3,
+                    "nomProduit": "kiwi",
+                    "descriptionProduit": "pas un jouet",
+                    "prix": 2.23,
+                    "quantite": 9
                 },
                 {
                     "id": 4,
@@ -41,7 +57,7 @@
                     "nomProduit": "salade",
                     "descriptionProduit": "pas un jouet",
                     "prix": 2.23,
-                    "quantite": 3
+                    "quantite": 1
                 },
                 {
                     "id": 6,
@@ -50,30 +66,6 @@
                     "descriptionProduit": "pas un jouet",
                     "prix": 2.23,
                     "quantite": 2
-                },
-                {
-                    "id": 7,
-                    "idProduit": 4,
-                    "nomProduit": "cerise",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 2
-                },
-                {
-                    "id": 8,
-                    "idProduit": 2,
-                    "nomProduit": "concombre",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 1
-                },
-                {
-                    "id": 9,
-                    "idProduit": 3,
-                    "nomProduit": "kiwi",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 0
                 }
             ]
         },

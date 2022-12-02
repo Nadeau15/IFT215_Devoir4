@@ -70,6 +70,11 @@ function enleverItem(id) {
                 location.reload();                 
             }
     })};
+            .append('<p class="col">' + item.prix.toFixed(2) + '</p>')
+            .append('<p id="id'+item.id+'" class="col">' + item.quantite + '</p>')
+            .append('<p class="col">' + (item.prix * item.quantite).toFixed(2) + '</p>')
+            .append('<hr/>');
+    return items_panier;
 }
 
 function ajouterItem(id) {
@@ -119,6 +124,7 @@ function chargerpanier() {
             });
             $('#totalFacture').append(
                 '<h6>Total: '+ (result.valeur).toFixed(2) + '</h6>');
+                '<h6>Total: '+ result.valeur.toFixed(2) + '</h6>');
         }
     });
 }
