@@ -44,12 +44,12 @@ function verifierProduitInventaire(id) {
             console.log(result);  
             
             if (result.qte_inventaire <= 0) {
-                alert("Épuisé: "+ result.qte_inventaire);
+                //alert("Épuisé: "+ result.qte_inventaire);
                 //throw "Le produit est épuisé!";
                 return result.qte_inventaire;
             }
             else {
-                alert("En stock: " + result.qte_inventaire);
+                //alert("En stock: " + result.qte_inventaire);
                 return result.qte_inventaire;
             }
 
@@ -116,12 +116,12 @@ function ajouterItem(id, idProduit) {
                 console.log(result);  
                 
                 if (result.qte_inventaire < 2) {
-                    alert("Épuisé: "+ result.qte_inventaire);
+                    //alert("Épuisé: "+ result.qte_inventaire);
                     //throw "Le produit est épuisé!";
                     //return result.qte_inventaire;
                 }
                 else {
-                    alert("En stock: " + result.qte_inventaire);
+                    //alert("En stock: " + result.qte_inventaire);
                     //return result.qte_inventaire;
                     $.ajax({
                         url: "/clients/1/panier/"+id,
