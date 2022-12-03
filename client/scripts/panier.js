@@ -163,21 +163,26 @@ function ajouterItem(id, idProduit) {
     }                              
 
 function chargerpanier() {
-    let TOKEN_PANIER = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MSwicm9sZSI6ImNsaWVudCIsImlhdCI6MTYzNjc1MjI1MywiZXhwIjoxODM2NzUyMjUzfQ.qMcKC0NeuVseNSeGtyaxUvadutNAfzxlhL5LYPsRB8k";
+    if(ID_CLIENT == -1 || TOKEN == -1){
+        document.getElementById("nonConnecte").hidden = false;
+    }
     $.ajax({
-        url: "/clients/1/panier",
+        url: "/clients/"+ID_CLIENT+"/panier",
         method: "GET",
         beforeSend: function (xhr){
-            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN_PANIER);
+            xhr.setRequestHeader('Authorization', "Basic "+ TOKEN);
         },
         success: function( result ) {
-            console.log(result);
-            $.each(result.items, function (key, value) {                
-                panier = panier_to_html(value);                               
+            $.each(result.items, function (key, value) {
+                panier = panier_to_html(value);
                 $('#list_panier').append(panier);
             });
             $('#totalFacture').append(
                 '<h6>Total: <div id="grandTotal">'+ (result.valeur).toFixed(2) + '</div></h6>');
+
+            if(result.items.length == 0){
+                document.getElementById("panierVide").hidden = false;
+            }
         }
     });
 }

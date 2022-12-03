@@ -51,7 +51,32 @@
             </div>
             <div class="group">
                 <label for="mot-de-passe">Mot de passe</label>
-                <input type="password" name="mot-de-passe" id="mot-de-passe" required/>
+                <input type="password" name="mot-de-passe" id="mot-de-passe" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#description" style="border: none;">
+                    <i class="fa-solid fa-circle-exclamation fa-xl"></i>
+                </button>
+            </div>
+            <div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Format Requis</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                            <div class="modal-body">
+                                <p>
+                                    Le mot de passe devrait contenir: <br/>
+                                    - 1 chiffre <br/>
+                                    - 1 MAJUSCULE <br/>
+                                    - 1 minuscule <br/>
+                                    - Minimum 8 caractères
+                                </p>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </fieldset>
         <fieldset>

@@ -1,8 +1,13 @@
+<head>
+    <link rel="stylesheet" href="style/panier.css">
+</head>
 <div>
-    <button type="button" class="infoButton" style="float:right" data-bs-toggle="modal" data-bs-target="#description">
+    <button type="button" class="infoButton" style="float:right; margin: 20px 0 0 0;" data-bs-toggle="modal" data-bs-target="#description">
         <i class="fa-solid fa-circle-question fa-2xl"></i>
       </button>
-    <input type="button" onClick="window.location.href ='#/produit'" style="float:right" class="button" value="Retourner au magasin"></button>      
+    <button type="button" onClick="window.location.href ='#/produit'" style="float:right; margin: 20px 0 0 0;">
+        Retourner au magasin
+    </button>      
 </div>
 <div class="row"><p>Panier</p></div>
 <div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -23,8 +28,7 @@
       </div>
     </div>
   </div>
-
-<section class="mt-2 container" id="graph">            
+<section class="mt-2 container">
     <div class="row">
         <div class="col">
             <h6>Nom</h6>
@@ -44,9 +48,15 @@
         </div>
         <hr/>
     </div>
-</section>
-    <!-- Affichage de la liste de produits-->    
-    <div id="list_panier"></div>        
+    <div id="nonConnecte" class="alert alert-danger alert-dismissable" hidden>
+        Vous devez vous connecter pour consulter votre panier.
+    </div>
+    <div id="panierVide" class="alert alert-info alert-dismissable" hidden>
+        Votre panier est vide.
+    </div>
+    <!-- Affichage de la liste de produits-->
+    <div id="list_panier"></div>
+
     <div id="totalFacture" style="padding-top: 20px; text-align: right;"></div>
     <input type="button" onClick="window.location.href ='#/transaction'" class="button" value="Passer la commande" style="float: right;" font-size="16px"></button>        
       <!--border: 0;
