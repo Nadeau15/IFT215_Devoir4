@@ -1,6 +1,33 @@
 <head>
     <link rel="stylesheet" href="style/panier.css">
 </head>
+<div>
+    <button type="button" class="infoButton" style="float:right; margin: 20px 0 0 0;" data-bs-toggle="modal" data-bs-target="#description">
+        <i class="fa-solid fa-circle-question fa-2xl"></i>
+      </button>
+    <button type="button" onClick="window.location.href ='#/produit'" style="float:right; margin: 20px 0 0 0;">
+        Retourner au magasin
+    </button>      
+</div>
+<div class="row"><p>Panier</p></div>
+<div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Panier</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Cette page contient le panier des produits sélectionnés. Vous pouvez modifier la quantité des produits dans le panier ou bien les enlever définitivement en appuyant sur le X.
+            Si vous voulez retourner à la page des produits, il suffit de cliquer sur le bouton "Retourner au magasin". Enfin, vous pouvez soumettre la commande en appuyant sur le bouton "Passer la commande".                      </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <section class="mt-2 container">
     <div class="row">
         <div class="col">

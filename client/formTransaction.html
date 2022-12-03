@@ -1,7 +1,10 @@
 <head>
     <link rel="stylesheet" href="style/transaction.css">
 </head>
-<div class="row">
+<div class="row" style="flex-wrap:nowrap; width:80%;">
+  <button type="button" class="btn" onClick="window.location.href ='#/panier'" style="float: left; margin: 10px 30px; width: 24%;" font-size="16px">
+    Retour au panier
+  </button>
     <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#description">
         <i class="fa-solid fa-circle-question fa-2xl"></i>
     </button>
@@ -80,7 +83,7 @@
               <div id="totalFacture" style="padding-top: 20px; text-align: right;"></div>
             </div>
           </div>
-          <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#confirmation">Soumettre</button>
+          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmation">Soumettre</button>
           <div class="modal fade" id="confirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">

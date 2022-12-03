@@ -9,7 +9,7 @@
         "courriel": "aaa@bbb.com",
         "mdp": "$2b$08$CEfAuisfWI/driqC4REyfOo/y8RG0g1dw7ngClRLBk1QANEs.U53u",
         "panier": {
-            "valeur": 157.25,
+            "valeur": 24.76,
             "items": [
                 {
                     "id": 0,
@@ -18,54 +18,6 @@
                     "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
                     "prix": 24.76,
                     "quantite": 1
-                },
-                {
-                    "id": 1,
-                    "idProduit": 1,
-                    "nomProduit": "Tomate",
-                    "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
-                    "prix": 24.76,
-                    "quantite": 4
-                },
-                {
-                    "id": 2,
-                    "idProduit": 2,
-                    "nomProduit": "concombre",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 2
-                },
-                {
-                    "id": 3,
-                    "idProduit": 3,
-                    "nomProduit": "kiwi",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 9
-                },
-                {
-                    "id": 4,
-                    "idProduit": 5,
-                    "nomProduit": "chou",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 3
-                },
-                {
-                    "id": 5,
-                    "idProduit": 6,
-                    "nomProduit": "salade",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 1
-                },
-                {
-                    "id": 6,
-                    "idProduit": 7,
-                    "nomProduit": "piment",
-                    "descriptionProduit": "pas un jouet",
-                    "prix": 2.23,
-                    "quantite": 2
                 }
             ]
         },
@@ -494,6 +446,40 @@
                 ],
                 "status": "reçue",
                 "date": "2022-12-03T03:09:02.947Z"
+            },
+            {
+                "id": 22,
+                "idClient": 1,
+                "montant": 49.52,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 0,
+                        "nomProduit": "Banane",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 2
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-12-03T03:12:32.294Z"
+            },
+            {
+                "id": 23,
+                "idClient": 1,
+                "montant": 74.28,
+                "produits": [
+                    {
+                        "id": 0,
+                        "idProduit": 0,
+                        "nomProduit": "Banane",
+                        "descriptionProduit": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
+                        "prix": 24.76,
+                        "quantite": 3
+                    }
+                ],
+                "status": "reçue",
+                "date": "2022-12-03T03:23:57.315Z"
             }
         ]
     },
