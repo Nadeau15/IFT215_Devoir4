@@ -32,8 +32,13 @@ router.get('/produits?nom=', function(req, res){
 router.get('/panier', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/panier.html'));
 });
+
 router.get('/connexion', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/connexion.html'));
+});
+
+router.get('/vente', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/vente.html'));
 });
 
 

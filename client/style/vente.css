@@ -1,0 +1,39 @@
+.objetVente{
+    margin: 5%;
+}
+
+.headerVente {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.status{
+    padding: 0 2% 0 2% ;
+    text-align: center;
+    border-radius: 10px;
+    max-width: fit-content;
+    margin-right: 2%;
+}
+
+.montantVente{
+    margin-left: 1rem;
+    max-width: fit-content;
+    border-top: 2px solid black;
+    align-items: flex-end;
+}
+.montantVente1{
+    margin-left: 1rem;
+}
+
+#list_userInfo{
+    background-color: antiquewhite;
+    margin-right: 1%;
+}
+
+.ready{
+    width: 18%;
+    border: none;
+    margin-right: 3%;
+    margin-bottom: 2%;
+}
