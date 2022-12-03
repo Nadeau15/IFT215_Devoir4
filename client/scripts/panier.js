@@ -1,5 +1,5 @@
 function panier_to_html(item){
-    items_panier = $('<div></div>')            
+    items_panier = $('<div id="div'+ item.id+'"></div>')            
             .addClass('row')
             .append('<p class="col">' + item.nomProduit + '</p>')
             .append('<p class="col" id="prix' + item.id +'">' + item.prix + '</p>')
@@ -23,9 +23,19 @@ function retirerPanier(id) {
         },
         success: function( result ) {
             console.log(result);
-            location.reload();            
-            $('#totalFacture').append(
-                '<h6>Total: '+ (result.valeur).toFixed(2) + '</h6>');
+            //location.reload();  
+            //alert("div"+id);
+               
+            var total = document.getElementById("total"+id).innerHTML;
+            var grandTotal = document.getElementById("grandTotal").innerHTML;
+
+            grandTotal = (grandTotal - total).toFixed(2);
+            //alert(grandTotal);
+            document.getElementById("grandTotal").innerHTML = grandTotal;
+
+            document.getElementById("div"+id).style.display = "none";
+            //$('#totalFacture').append(
+               // '<h6>Total: '+ (result.valeur).toFixed(2) + '</h6>');
         }
     });
 }
@@ -44,12 +54,12 @@ function verifierProduitInventaire(id) {
             console.log(result);  
             
             if (result.qte_inventaire <= 0) {
-                alert("Épuisé: "+ result.qte_inventaire);
+                //alert("Épuisé: "+ result.qte_inventaire);
                 //throw "Le produit est épuisé!";
                 return result.qte_inventaire;
             }
             else {
-                alert("En stock: " + result.qte_inventaire);
+                //alert("En stock: " + result.qte_inventaire);
                 return result.qte_inventaire;
             }
 
