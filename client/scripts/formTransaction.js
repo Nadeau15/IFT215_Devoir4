@@ -23,23 +23,20 @@ function chargertransaction() {
                 '<h6>Total: '+ result.valeur.toFixed(2) + '</h6>');
             $('#qteItem').text(result.items.length);
             $('#confirmationButtons').append('<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>'+
-            '<button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="envoyerCommande()">Oui</button>');
+            '<button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="envoyerCommande()">Oui</button>')
         }
     });
 }
 
 function envoyerCommande(){
+    console.log(ID_CLIENT + '\n' + TOKEN);
     $.ajax({
         url: "/ventes",
         method: "POST",
-        body: JSON.stringify({
-            "idClient": 1
-        }),
+        data: JSON.stringify({ idClient: ID_CLIENT }),
         beforeSend: function (xhr){
             xhr.setRequestHeader('Authorization', "Basic " + TOKEN);
+            xhr.setRequestHeader('Content-Type', 'application/json');
         },
-        success: function( result ) {
-            console.log(allllllooooo);
-        }
     });
 }
