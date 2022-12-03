@@ -228,26 +228,7 @@ form .group select{
 .centrer {
     text-align: center;
 }
-.connectionForm {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.connectionForm fieldset{
-    border:  2px solid black;
-    border-radius: 20px;
-    padding: 2%;
-    width: 50%;
-    margin-bottom:5%;
-}
-.submit-connection {
-    max-width: 100%;
-    text-align: center;
-    padding: 14px 0px 14px 0px;
-}
 
 .fa-circle-exclamation {
     color: var(--fond-menu);
 }
-

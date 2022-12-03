@@ -1,30 +1,21 @@
-let ID_CLIENT = -1
+let TOKEN = -1;
+let ID_CLIENT = -1;
 
-function versCommande(){
-    // let COURRIEL = document.getElementById("courriel").value;
-    // let MDP =document.getElementById("mot-de-passe").value;
-
+function connexion(){
+    let COURRIEL = document.getElementById("courriel").value;
+    let MDP =document.getElementById("mot-de-passe").value;
     $.ajax({
-        url: "/client/" + ID_CLIENT + "/panier",
+        url: "/connexion",
         method:"POST",
-        // data:JSON.stringify({"courriel":COURRIEL,"mdp":MDP}),
-        contentType: "application/json",
-        success: function(result){
-            // TOKEN_CLIENT = result.token;
-            // TOKEN_ADMIN = result.token;
-            // ID_CLIENT = result.idClient;
-
-            window.location.replace('#/accueil')
-
-
-            // if(result.role === 'admin'){
-            // }
-            // else{
-            //     window.location.replace('#/')
-            // }
+        data: {"courriel": COURRIEL, "mdp": MDP},
+        beforeSend: function (xhr){
+            xhr.setRequestHeader('Authorization', "No Auth");
         },
-        // error: function (result) {
-        //      document.getElementById(`error`).setAttribute("style","display:block")
-        // }
+        success: function(result){
+            TOKEN = result.token;
+            ID_CLIENT = result.idClient;
+
+            window.location.href ='#/';
+        },
     });
 }

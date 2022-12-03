@@ -23,6 +23,7 @@
     <script src="scripts/inscription.js"></script>
     <script src="scripts/connexion.js"></script>
     <script src="scripts/points_de_vente.js"></script>
+    <script src="scripts/formTransaction.js"></script>
     <script src="scripts/navigation.js"></script>
     <script src="scripts/produit.js"></script>
     <script src="scripts/panier.js"></script>
@@ -34,11 +35,16 @@
 <body>
 <header id="navigation">
     <nav>
-        <a href="#"><img src="images/logo.png" alt="Logo de Pro-Gramme" /></a><br />
+        <a href="#"><img src="images/logo.png" alt="Logo de Pro-Gramme"/></a><br />
         <div id="menu-principal">
             <div class="barre-menu">
                 <a href="#/" >Accueil</a>
-                <!--<a href="#/inscription">Inscription</a> -->
+                <div class="deroulant"><button class="btn-deroulant">Connexion</button>
+                    <div class="sous-menu">
+                        <a href="#/inscription">Inscription</a>
+                        <a href="#/connexion">Se connecter </a>
+                    </div>
+                </div>
                 <a href="#/produit">Produits</a>
                 <div class="deroulant"><button class="btn-deroulant">À propos</button>
                     <div class="sous-menu">
