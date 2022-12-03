@@ -40,4 +40,8 @@ router.get('/transaction', function(req, res){
 router.get('/connexion', function(req, res){
     res.sendFile(path.join(__dirname + '/../client/connexion.html'));
 });
+
+router.get('/vente', function(req, res){
+    res.sendFile(path.join(__dirname + '/../client/vente.html'));
+});
 module.exports = router
