@@ -1,5 +1,3 @@
-TOKEN_VENTE =
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZENsaWVudCI6MCwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjcwMDQwOTQwLCJleHAiOjE2NzAwNDgxNDB9.l1lQEv7CZHzuETN6rBrBB5IXcjHdq8bU6-3hRsCsK0Q";
 /**
  *
  * @param {Vente} vente
@@ -75,7 +73,7 @@ function commandePrete(idVente){
     
     beforeSend: function (xhr) {
       xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN_VENTE);
+      xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN);
     },
     success: function (result) {
         chargervente();
@@ -105,7 +103,7 @@ function chargervente() {
   $.ajax({
     url: '/ventes',
     beforeSend: function (xhr) {
-      xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN_VENTE);
+      xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN);
     },
     success: function (result) {
       console.table(result);
@@ -114,10 +112,9 @@ function chargervente() {
           url: '/clients/' + value.idClient,
           method: 'GET',
           beforeSend: function (xhr) {
-            xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN_VENTE);
+            xhr.setRequestHeader('Authorization', 'Basic ' + TOKEN);
           },
           success: function (result) {
-            // client = [result.nom, result.prenom, result.pays];
             client = result;
             vente = vente_to_html(value, client);
             $('#list_ventes').append(vente);

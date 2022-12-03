@@ -103,7 +103,7 @@
     {
         "id": 6,
         "idClient": 1,
-        "montant": 2009.5600000000002,
+        "montant": 2009.56,
         "produits": [
             {
                 "id": 0,
@@ -176,7 +176,7 @@
     {
         "id": 7,
         "idClient": 1,
-        "montant": 152.79000000000005,
+        "montant": 152.79,
         "produits": [
             {
                 "id": 0,
@@ -283,7 +283,7 @@
     {
         "id": 10,
         "idClient": 1,
-        "montant": 26.990000000000002,
+        "montant": 26.99,
         "produits": [
             {
                 "id": 0,
@@ -308,7 +308,7 @@
     {
         "id": 11,
         "idClient": 1,
-        "montant": 29.220000000000002,
+        "montant": 29.22,
         "produits": [
             {
                 "id": 0,
@@ -507,5 +507,22 @@
         ],
         "status": "reçue",
         "date": "2022-12-03T03:09:02.947Z"
+    },
+    {
+        "id": 22,
+        "idClient": 1,
+        "montant": 361.26,
+        "produits": [
+            {
+                "id": 1,
+                "idProduit": 2,
+                "nomProduit": "Concombre",
+                "descriptionProduit": "pas un jouet",
+                "prix": 2.23,
+                "quantite": 162
+            }
+        ],
+        "status": "reçue",
+        "date": "2022-12-03T04:31:14.912Z"
     }
 ]
