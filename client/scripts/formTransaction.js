@@ -28,8 +28,7 @@ function chargertransaction() {
     });
 }
 
-function envoyerCommande(){
-    console.log(ID_CLIENT + '\n' + TOKEN);
+function envoyerCommande(result){
     $.ajax({
         url: "/ventes",
         method: "POST",
@@ -38,5 +37,12 @@ function envoyerCommande(){
             xhr.setRequestHeader('Authorization', "Basic " + TOKEN);
             xhr.setRequestHeader('Content-Type', 'application/json');
         },
+        success: function(total){
+            chargertransaction();
+            $('#panier').append(panier);
+            document.getElementById("panier").innerHTML = "";
+            document.getElementById("totalFacture").innerHTML = "";
+        },
+
     });
 }

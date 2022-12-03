@@ -5,7 +5,7 @@
         "nom": "Banane",
         "description": "Un poirier est une espèce d'arbre qui offre de bons suppléments",
         "prix": 24.76,
-        "qte_inventaire": 85,
+        "qte_inventaire": 49,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -31,7 +31,7 @@
         "nom": "Concombre",
         "description": "pas un jouet",
         "prix": 2.23,
-        "qte_inventaire": 996,
+        "qte_inventaire": 993,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -44,7 +44,7 @@
         "nom": "Kiwi",
         "description": "pas un jouet",
         "prix": 2.23,
-        "qte_inventaire": 34,
+        "qte_inventaire": 32,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -57,7 +57,7 @@
         "nom": "Cerise",
         "description": "pas un jouet",
         "prix": 2.23,
-        "qte_inventaire": 46,
+        "qte_inventaire": 45,
         "categorie": {
             "id": 1,
             "nom": "Prunier",
@@ -70,7 +70,7 @@
         "nom": "Chou",
         "description": "pas un jouet",
         "prix": 2.23,
-        "qte_inventaire": 47,
+        "qte_inventaire": 46,
         "categorie": {
             "id": 1,
             "nom": "Prunier",

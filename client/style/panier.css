@@ -17,9 +17,9 @@
     color: orangered;
 }
 
-.alert{
-    display:none;
-  }
+.nonConnecter{
+    display: blocl !important;
+}
 
 .fa-xmark {
     color: #0f5132;

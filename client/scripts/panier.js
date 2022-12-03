@@ -12,19 +12,25 @@ function panier_to_html(item){
 }
 
 function chargerpanier() {
+    if(ID_CLIENT == -1 || TOKEN == -1){
+        document.getElementById("nonConnecte").hidden = false;
+    }
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         beforeSend: function (xhr){
             xhr.setRequestHeader('Authorization', "Basic "+ TOKEN);
         },
         success: function( result ) {
-            console.log(result);
             $.each(result.items, function (key, value) {
                 panier = panier_to_html(value);
                 $('#list_panier').append(panier);
             });
             $('#totalFacture').append(
                 '<h6>Total: '+ result.valeur.toFixed(2) + '</h6>');
+
+            if(result.items.length == 0){
+                document.getElementById("panierVide").hidden = false;
+            }
         }
     });
 }

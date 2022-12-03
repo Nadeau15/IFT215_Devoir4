@@ -1,3 +1,5 @@
+let AJOUT = false;
+
 function item_to_html(item){
     item_card = $('<div></div>')
         .addClass('card mb-4 rounded-3 shadow-sm');
@@ -23,14 +25,14 @@ function item_to_html(item){
             '<p id="qte'+item.id+'">'+item.qte_inventaire+'</p>'+
         '</div>'+
       '</div>'+
-      '<div id="alert'+item.id+'" class="alert alert-success alert-dismissable">'+
-        'Success! message sent successfully.'+
+      '<div id="alert'+item.id+'" class="alert alertAdd alert-success alert-dismissable" style="display:none;">'+
+        'L\'item a été ajouter à votre panier.'+
         '<button type="button" class="infoButton" onclick="closeAlert('+item.id+')">'+
             '<i class="fa-solid fa-xmark Close" aria-hidden="true"></i>'+
       '</button>'+
       '</div>'+
       '<div class="modal-footer">'+
-        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeAlert('+item.id+')">Fermer</button>'+
+        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>'+
         '<button id="'+item.id+'" type="button" class="btn btn-primary" onclick="add_item('+item.id +','+item.qte_inventaire+')">Ajouter au panier</button>'+
       '</div>'+
     '</div>'+
@@ -38,7 +40,12 @@ function item_to_html(item){
 '</div>');
     item_detail = $('<ul></ul>')
         .addClass('list-unstyled mt-3 mb-4')
-        .append('<li id="itemQteCard'+item.id+'"><br/></li>');
+        .append('<li id="itemQteCard'+item.id+'"><br/></li>'+
+        '<div id="alert2'+item.id+'" class="alert alert-success alert-dismissable" style="display:none;">'+
+        'L\'item a été ajouter à votre panier.'+
+        '<button type="button" class="infoButton" onclick="closeAlert('+item.id+')">'+
+            '<i class="fa-solid fa-xmark Close" aria-hidden="true"></i>'+
+      '</button>');
     item_body = $('<div></div>')
         .addClass('card-body')
         .append('<div class="productImg"><img src="images/'+item.nom+'.jpg" style="width: 130px; height:130px"/></div>')
@@ -81,14 +88,14 @@ function searchItem_to_html(item){
             '<p id="qte'+item.id+'">'+item.qte_inventaire+'</p>'+
         '</div>'+
       '</div>'+
-      '<div id="alert'+item.id+'" class="alert alert-success alert-dismissable">'+
-        'Success! message sent successfully.'+
+      '<div id="alert'+item.id+'" class="alert alert-success alert-dismissable" style="display:none;">'+
+        'L\'item a été ajouter à votre panier.'+
         '<button type="button" class="infoButton" onclick="closeAlert('+item.id+')">'+
             '<i class="fa-solid fa-xmark Close" aria-hidden="true"></i>'+
       '</button>'+
       '</div>'+
       '<div class="modal-footer">'+
-        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="closeAlert('+item.id+')">Fermer</button>'+
+        '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>'+
         '<button id="'+item.id+'" type="button" class="btn btn-primary" onclick="add_item('+item.id +','+item.qte_inventaire+')">Ajouter au panier</button>'+
       '</div>'+
     '</div>'+
@@ -127,6 +134,10 @@ function closeAlert(id){
     $("#alert"+id).fadeTo(0, 500).slideUp(500, function(){
         $("#alert"+id).slideUp(500);
     });
+    $("#alert2"+id).fadeTo(0, 500).slideUp(500, function(){
+        $("#alert"+id).slideUp(500);
+    });
+    AJOUT = false;
 }
 
 function chargerproduit(){
@@ -147,7 +158,11 @@ function chargerproduit(){
                 }
             });
             $('#item_counter').append();
-        }
+            if(ID_CLIENT == -1 || TOKEN == -1){
+                document.getElementById("nonConnecte").hidden = false;
+            }
+        },
+
     });
 
     $.ajax({
@@ -169,7 +184,6 @@ function submit(event){
 
 function submitted() {
     let search = document.getElementById('search');
-    console.log(search.value);
     if(search.value == ""){
         document.getElementById("list_items").style.display = "";
         document.getElementById("searched_items").style.display = "none";
@@ -181,7 +195,6 @@ function submitted() {
             url: "/produits?nom="+search.value,
             method: "GET",
             success: function( result ) {
-                console.log(result);
                 $.each(result, function (key, value) {
                     document.getElementById("searched_items").style.display = "";
                     item = searchItem_to_html(value);
@@ -200,7 +213,6 @@ function submitted() {
   }
 
 function add_item(id, qte){
-    console.log(TOKEN);
     $.ajax({
         url: "/clients/"+ID_CLIENT+"/panier",
         method:"POST",
@@ -216,7 +228,9 @@ function add_item(id, qte){
                 document.getElementById("itemQteCard"+id).style.textAlign = "center";
                 document.getElementById("cardPanierBtn"+id).disabled = true;
             }
+            AJOUT = true;
             $("#alert"+id).hide().show('medium');
+            $("#alert2"+id).hide().show('medium');
             current_qty = document.getElementById("qte"+id).innerHTML;
             document.getElementById("qte"+id).innerHTML = current_qty-1;
         }

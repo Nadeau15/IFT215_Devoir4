@@ -1,3 +1,6 @@
+<head>
+    <link rel="stylesheet" href="style/panier.css">
+</head>
 <section class="mt-2 container">
     <div class="row">
         <div class="col">
@@ -13,6 +16,12 @@
             <h6>Total</h6>
         </div>
         <hr/>
+    </div>
+    <div id="nonConnecte" class="alert alert-danger alert-dismissable" hidden>
+        Vous devez vous connecter pour consulter votre panier.
+    </div>
+    <div id="panierVide" class="alert alert-info alert-dismissable" hidden>
+        Votre panier est vide.
     </div>
     <!-- Affichage de la liste de produits-->
     <div id="list_panier"></div>
