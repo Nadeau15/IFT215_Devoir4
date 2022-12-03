@@ -14,48 +14,52 @@
           <div class="row">
             <div class="col-50">
               <h3>Adresse de facturation</h3>
-              <label for="nomComplet" class="form-label"><i class="fa fa-user"></i> Nom complet</label>
-              <input type="text" id="nomComplet" name="firstname" placeholder="Simon E. Beaulieu">
-              <label for="email" class="form-label"><i class="fa fa-envelope"></i> Adresse courriel</label>
-              <input type="text" id="email" name="email" placeholder="beaulieu.absent@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
-              <label for="adresse" class="form-label"><i class="fa fa-address-card-o"></i> Adresse</label>
-              <input type="text" id="adresse" class="form-control" name="address" placeholder="39 rue Manote">
-              <label for="ville" class="form-label"><i class="fa fa-institution"></i> Ville</label>
-              <input type="text" id="ville" name="city" placeholder="Longueuil">
-  
-              <div class="row">
-                <div class="col-50">
-                  <label for="state">État/Province</label>
-                  <input type="text" id="state" name="state" placeholder="QC">
+              <fieldset>
+                <label for="nomComplet" class="form-label"><i class="fa fa-user"></i> Nom complet</label>
+                <input type="text" id="nomComplet" name="firstname" placeholder="Simon E. Beaulieu" required>
+                <label for="email" class="form-label"><i class="fa fa-envelope"></i> Adresse courriel</label>
+                <input type="text" id="email" name="email" placeholder="beaulieu.absent@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 4}$">
+                <label for="adresse" class="form-label"><i class="fa fa-address-card-o"></i> Adresse</label>
+                <input type="text" id="adresse" class="form-control" name="address" placeholder="39 rue Manote" required>
+                <label for="ville" class="form-label"><i class="fa fa-institution"></i> Ville</label>
+                <input type="text" id="ville" name="city" placeholder="Longueuil" required>
+    
+                <div class="row">
+                  <div class="col-50">
+                    <label for="state">État/Province</label>
+                    <input type="text" id="state" name="state" placeholder="QC" required>
+                  </div>
+                  <div class="col-50">
+                    <label for="zip">Code postal</label>
+                    <input type="text" id="zip" name="zip" placeholder="G1Q 4U2" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
+                  </div>
                 </div>
-                <div class="col-50">
-                  <label for="zip">Code postal</label>
-                  <input type="text" id="zip" name="zip" placeholder="G1Q 4U2">
-                </div>
-              </div>
+              </fieldset>
             </div>
   
             <div class="col-50">
               <h3>Méthode de paiement</h3>
-              <label for="cname">Détenteur de la carte</label>
-              <input type="text" id="cname" name="cardname" placeholder="Simon E. Beaulieu">
-              <label for="ccnum">Numéro de la carte</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1234-1234-1234-1234">
-  
-              <div class="row">
-                <div class="col-25">
-                    <label for="expmonth">Mois d'expiration</label>
-                    <input type="text" id="expmonth" name="expmonth" placeholder="Decembre">
+              <fieldset>
+                <label for="cname">Détenteur de la carte</label>
+                <input type="text" id="cname" name="cardname" placeholder="Simon E. Beaulieu" required>
+                <label for="ccnum">Numéro de la carte</label>
+                <input type="text" id="ccnum" name="cardnumber" placeholder="1234-1234-1234-1234" required pattern="[0-9]{4}$-[0-9]{4}$-[0-9]{4}$-[0-9]{4}$">
+    
+                <div class="row">
+                  <div class="col-25">
+                      <label for="expmonth">Mois d'expiration</label>
+                      <input type="text" id="expmonth" name="expmonth" placeholder="Decembre" required>
+                  </div>
+                  <div class="col-25">
+                    <label for="expyear">Année d'expiration</label>
+                    <input type="text" id="expyear" name="expyear" placeholder="2022" required pattern="[0-9]{4}$" >
+                  </div>
+                  <div class="col-25">
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="352" required pattern="[0-9]{3}$">
+                  </div>
                 </div>
-                <div class="col-25">
-                  <label for="expyear">Année d'expiration</label>
-                  <input type="text" id="expyear" name="expyear" placeholder="2022">
-                </div>
-                <div class="col-25">
-                  <label for="cvv">CVV</label>
-                  <input type="text" id="cvv" name="cvv" placeholder="352">
-                </div>
-              </div>
+              </fieldset>
             </div>
   
           </div>
@@ -76,7 +80,7 @@
               <div id="totalFacture" style="padding-top: 20px; text-align: right;"></div>
             </div>
           </div>
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#confirmation">Soumettre</button>
+          <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#confirmation">Soumettre</button>
           <div class="modal fade" id="confirmation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -100,23 +104,29 @@
       </div>
     </div>
     <div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <p>
-                L'utilisateur doit entrer les informations nécessaires pour pouvoir passer sa commande.
-                Lorsqu'il aura rempli tout les champs en respectant les formats requis, il pourra revérifier 
-                les items qu'il achète et ensuite confirmer sa commande. Lorsque le pop-off s'affiche, 
-                cliquer sur oui ou non dépendament si l'utilisateur veut réellement passer sa commande.
-              </p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              L'utilisateur doit entrer les informations nécessaires pour pouvoir passer sa commande.
+              Lorsqu'il aura rempli tout les champs en respectant les formats requis, il pourra revérifier 
+              les items qu'il achète et ensuite confirmer sa commande. Lorsque le pop-off s'affiche, 
+              cliquer sur oui ou non dépendament si l'utilisateur veut réellement passer sa commande.
+              Voici les formats requis à respecter:
+              Adresse courriel: beaulieu.absent@example.com
+              Code postal: R2D 2P1
+              Carte de crédit: 1234-1234-1234-1234
+              Date d'expiration: 2000
+              CVC: 111
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
           </div>
         </div>
       </div>
+    </div>

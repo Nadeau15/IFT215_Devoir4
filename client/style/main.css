@@ -228,3 +228,7 @@ form .group select{
 .centrer {
     text-align: center;
 }
+
+.fa-circle-exclamation {
+    color: var(--fond-menu);
+}

@@ -1,45 +1,22 @@
 <head>
     <link rel="stylesheet" href="style/connexion.css">
 </head>
+<div class="row">
+    <button type="button" class="infoButton" data-bs-toggle="modal" data-bs-target="#description">
+        <i class="fa-solid fa-circle-question fa-2xl"></i>
+    </button>
+</div>
 <h1 id="para-1" class="centrer">Connexion au Pro-Gramme</h1>
 <form class="connectionForm" method="post">
     <fieldset id="#renseignement-connexion">
         <div class="input-group mb-3">
             <!--Doit avoir la forme xyz@xyz.xy-->
-            <input id="courriel" type="email" class="form-control" placeholder="Courriel@gmail.com" aria-label="courriel" aria-describedby="button-addon2"
-            required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+            <input id="courriel" type="email" class="form-control" placeholder="Courriel@gmail.com" aria-label="courriel" aria-describedby="button-addon2" required>
         </div>
 
         <div class="input-group mb-3">
             <!--Doit contenir au moins un chiffre, une majuscule et une minuscule. Doit avoir au moins 8 caractères-->
-            <input id="mot-de-passe" type="password" class="form-control" placeholder="Mot de passe" aria-label="mot de passe" aria-describedby="button-addon2"
-            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-            
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2" data-bs-toggle="modal" data-bs-target="#description">
-                <i class="fa-solid fa-circle-exclamation fa-xl"></i>
-            </button>
-            <div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Format Requis</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                            <div class="modal-body">
-                                <p>
-                                    Le mot de passe devrait contenir: <br/>
-                                    - 1 chiffre <br/>
-                                    - 1 MAJUSCULE <br/>
-                                    - 1 minuscule <br/>
-                                    - Minimum 8 caractères
-                                </p>
-                            </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <input id="mot-de-passe" type="password" class="form-control" placeholder="Mot de passe" aria-label="mot de passe" aria-describedby="button-addon2" required>
         </div>
         <div class="submit-connection">
             <input type="button" class="btn btn-primary" value="Connexion" onclick="connexion()"/>
@@ -48,10 +25,23 @@
                 Veuillez réessayer!
             </div>
         </div>
-        <!-- <a href="#/confirmation">
-            <div class="n">
-                <button class="btn btn-primary" type="submit">Connexion</button>
-            </div>
-        </a> -->
     </fieldset>
 </form>
+<div class="modal fade" id="description" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Description</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Cette page permet à l'utilisateur de se connecter en entrant son adresse courriel et son mot de passe.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
